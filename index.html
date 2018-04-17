@@ -233,6 +233,8 @@
                 };
                 
                 var onError = function(data) {
+		   $('#genericSC').css('display', 'inline');
+		    $('#appleSC').css('display', 'none');
                   console.log("Error");
                     // Do something with the returning data
                 };
@@ -601,7 +603,7 @@ metadata: listPickerSCMetadata
      </head>
    
      <body>
-	 <div id="genericSC" style="visibility:hidden;">
+	 <div id="genericSC">
          <div class="tab">
                <button id="buttonMap" class="tablinks tabMap" onclick="openContent(event, 'Map')">Map</button>
                <button id="buttonCard" class="tablinks tabCard" onclick="openContent(event, 'Card')">Card</button>
@@ -659,7 +661,7 @@ metadata: listPickerSCMetadata
  	            <div id="sendVideo" class="generate">Generate Code</div>
          </div>
 	 </div>
-	 <div id="appleSC" style="visibility:hidden;">
+	 <div id="appleSC">
 		 <button class="applebutton" id="submitRestaurant" >Restaurant</button>
 		 </br>
 		 <button class="applebutton" id="submitAccountNumber" >Bank Account</button>
