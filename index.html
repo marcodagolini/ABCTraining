@@ -351,22 +351,36 @@ metadata: listPickerSCMetadata
 		  
 
         var listPickerSC = {
-            "type": "vertical",
-            "elements": [{
-                "type": "vertical",
-                "elements": [{
-                    "type": "image",
-                    "url": "https://i.imgur.com/ieehkX3.png"
-                }]
-            }, {
-                "type": "text",
-                "text": "Your account banking",
-                "style": {
-                    "bold": true,
-                    "size": "large"
-                }
-            }]
-        };
+		 "type": "vertical",
+            	 "elements": [{
+ 			               "type": "vertical",
+ 			               "elements": [{
+ 				               "type": "image",
+ 				               "url": "https://i.imgur.com/ieehkX3.png",
+ 				               "tooltip": "image tooltip"
+ 			               },
+ 			               {
+ 				               "type": "text",
+ 				               "text": "Your account banking",
+ 				               "tooltip": "brand new iphone 8",
+ 				               "style": {
+ 					               "bold": true,
+ 					               "size": "large",
+						       "color": "#000000"
+ 				               }
+ 			               },
+ 			               {
+ 				               "type": "button",
+ 				               "title": "Cracco Website",
+ 				               "click": {
+ 					               "actions": [{
+ 						               "type": "link",
+ 						               "uri": "https://www.ristorantecracco.it"
+ 					               }]
+ 				               }
+ 			               }
+						    
+ 		               ]}]};
 		  
 		  
         var listPickerSCMetadata = [{
