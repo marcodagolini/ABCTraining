@@ -298,7 +298,7 @@
  				               "click": {
  					               "actions": [{
  						               "type": "link",
- 						               "uri": "https://www.ristorantecracco.it/"
+ 						               "uri": "https://www.ristorantecracco.it"
  					               }]
  				               }
  			               }
@@ -348,55 +348,42 @@ metadata: listPickerSCMetadata
 		  
 
         var listPickerSC = {
- 			               "type": "vertical",
- 			               "elements": [{
- 				               "type": "image",
- 				               "url": "https://i.imgur.com/BahW8MP.png",
- 				               "tooltip": "image tooltip"
- 			               },
- 			               {
- 				               "type": "text",
- 				               "text": "Cracco Restaurant",
- 				               "tooltip": "brand new iphone 8",
- 				               "style": {
- 					               "bold": true,
- 					               "size": "large",
-						       "color": "#000000"
- 				               }
- 			               },
- 			               {
- 				               "type": "button",
- 				               "title": "Cracco Website",
- 				               "click": {
- 					               "actions": [{
- 						               "type": "link",
- 						               "uri": "https://www.ristorantecracco.it/"
- 					               }]
- 				               }
- 			               }
- 		               ]};
+            "type": "vertical",
+            "elements": [{
+                "type": "vertical",
+                "elements": [{
+                    "type": "image",
+                    "url": "https://lpwidgets.devscribble.com/images/padlock.png"
+                }]
+            }, {
+                "type": "text",
+                "text": "Authentication Challenge",
+                "style": {
+                    "bold": true,
+                    "size": "large"
+                }
+            }]
+        };
 		  
 		  
-        var listPickerSCMetadata = [
-    {
-        "type": "BusinessChatMessage",
-        "multipleSelection": true,
-        "receivedMessage": {
-            "style": "icon",
-            "subtitle": "this is the subtitle",
-            "title": "this is the title",
-            "secondarySubtitle": "secondary subtitle",
-            "tertiarySubtitle": "tertiarySubtitle"
-        },
-        "replyMessage": {
-            "style": "style",
-            "subtitle": "subtitle",
-            "title": "title",
-            "secondarySubtitle": "secondarySubtitle",
-            "tertiarySubtitle": "tertiarySubtitle"
-        }
-    }
-];
+        var listPickerSCMetadata = [{
+            "type": "BusinessChatCustomMessage",
+            "appId": 1263174302,
+            "appName": "AuthenticationPOC",
+            "bid": "com.apple.messages.MSMessageExtensionBalloonPlugin:7A76CR8BD8:com.liveperson.businesschatLookio.MessagesExtension",
+            "sessionIdentifier": "",
+            "useLiveLayout": false,
+            "receivedMessage": {
+                "title": "Please Authenticate",
+                "style": "icon",
+                "subtitle": "",
+                "secondarySubtitle": "",
+                "tertiarySubtitle": "",
+                "imageTitle": "",
+                "imageSubtitle": ""
+            },
+            "URL": "https://imessagetest.com/touch_id_status?title:Please%20Authenticate&title:Authentication%20cancelled%20by%20the%20system&title:Authentication%20cancelled%20by%20the%20user&title:User%20wants%20to%20use%20a%20password&title:Authentication%20failed&title:User%20Canceled&title:TouchID%20not%20enrolled&title:Passcode%20not%20set&title:TouchID%20not%20available&title:Authenticated%20success%20!"
+        }];
     
     
 
