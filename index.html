@@ -179,7 +179,6 @@
      
      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
      <script src="https://lpcdn.lpsnmedia.net/webagent/client-SDK.min.js"></script>
-     <script src="https://lpcdn.lpsnmedia.net/webagent/client-SDK.min.js"></script>
  	  
      
  	  
@@ -259,6 +258,22 @@
          lpTag.agentSDK.init({});
        
          function sendSC(json) {
+            var cmdName = lpTag.agentSDK.cmdNames.writeSC;
+            var data = {json:json};
+            lpTag.agentSDK.command(cmdName, data, function (err) {
+               outputLog.value = err ? err : 'done';
+            });
+         }
+	  function restaurantappleSC() {
+	    var json =  {};
+            var cmdName = lpTag.agentSDK.cmdNames.writeSC;
+            var data = {json:json};
+            lpTag.agentSDK.command(cmdName, data, function (err) {
+               outputLog.value = err ? err : 'done';
+            });
+         }
+	 function accountnumberappleSC() {
+	    var json =  {};
             var cmdName = lpTag.agentSDK.cmdNames.writeSC;
             var data = {json:json};
             lpTag.agentSDK.command(cmdName, data, function (err) {
@@ -380,7 +395,22 @@
                  sendSC(DataVideo);
                  }
             });
+	     
+	     
+	     
+	     $(document).on('click', function(evt) {
+               if($(evt.target).is('#submitRestaurant')) {
+		       restaurantappleSC();
+                 }
+            });
        	    
+	     
+	     
+	      $(document).on('click', function(evt) {
+               if($(evt.target).is('#submitAccountNumber')) {
+ 		           accountnumberappleSC();    
+                 }
+            });
  	    
  	
  	    
@@ -530,9 +560,9 @@
          </div>
 	 </div>
 	 <div id="appleSC">
-		 <button class="applebutton" id="submitLogin" >Restaurant</button>
+		 <button class="applebutton" id="submitRestaurant" >Restaurant</button>
 		 </br>
-		 <button class="applebutton" id="submitLogin" >Bank Account</button>
+		 <button class="applebutton" id="submitAccountNumber" >Bank Account</button>
 	 </div>
         
     </body>
