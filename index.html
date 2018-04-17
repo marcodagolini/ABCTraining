@@ -264,17 +264,92 @@
             });
          }
 	  function restaurantappleSC() {
-	    var json =  {};
+	    var jData = {
+        "json": {
+            "type": "vertical",
+            "elements": [{
+                "type": "vertical",
+                "elements": [{
+                    "type": "image",
+                    "url": "https://lpwidgets.devscribble.com/images/WelcomeCelebratory.jpg"
+                }]
+            }, {
+                "type": "text",
+                "text": "Welcome Bubble",
+                "style": {
+                    "bold": true,
+                    "size": "large"
+                }
+            }]
+        },
+        "metadata": [{
+            "type": "BusinessChatCustomMessage",
+            "appId": 1263174302,
+            "appName": "WelcomeBubblePOC",
+            "bid": "com.apple.messages.MSMessageExtensionBalloonPlugin:7A76CR8BD8:com.liveperson.abcpoc.welcomMessagePOC.WelcomMessagePOC.welcomMessagePOCExtension",
+            "sessionIdentifier": "",
+            "useLiveLayout": true,
+            "receivedMessage": {
+                "imageURL": "https://lpwidgets.devscribble.com/images/WelcomeCelebratory.jpg",
+                "title": "Welcome",
+                "style": "icon",
+                "subtitle": "",
+                "secondarySubtitle": "",
+                "tertiarySubtitle": "",
+                "imageTitle": "",
+                "imageSubtitle": ""
+            },
+            "URL": "?LPABCData=" + encodeURIComponent(JSON.stringify(subPayload))
+        }]
+    };
+
             var cmdName = lpTag.agentSDK.cmdNames.writeSC;
-            var data = {json:json};
+            var data = {json:jData};
             lpTag.agentSDK.command(cmdName, data, function (err) {
                outputLog.value = err ? err : 'done';
             });
          }
 	 function accountnumberappleSC() {
-	    var json =  {};
+	    var jData = {
+        "json": {
+            "type": "vertical",
+            "elements": [{
+                "type": "vertical",
+                "elements": [{
+                    "type": "image",
+                    "url": "https://lpwidgets.devscribble.com/images/padlock.png"
+                }]
+            }, {
+                "type": "text",
+                "text": "Authentication Challenge",
+                "style": {
+                    "bold": true,
+                    "size": "large"
+                }
+            }]
+        },
+        "metadata": [{
+            "type": "BusinessChatCustomMessage",
+            "appId": 1263174302,
+            "appName": "AuthenticationPOC",
+            "bid": "com.apple.messages.MSMessageExtensionBalloonPlugin:7A76CR8BD8:com.liveperson.businesschatLookio.MessagesExtension",
+            "sessionIdentifier": "",
+            "useLiveLayout": false,
+            "receivedMessage": {
+                "title": "Please Authenticate",
+                "style": "icon",
+                "subtitle": "",
+                "secondarySubtitle": "",
+                "tertiarySubtitle": "",
+                "imageTitle": "",
+                "imageSubtitle": ""
+            },
+            "URL": "https://imessagetest.com/touch_id_status?title:Please%20Authenticate&title:Authentication%20cancelled%20by%20the%20system&title:Authentication%20cancelled%20by%20the%20user&title:User%20wants%20to%20use%20a%20password&title:Authentication%20failed&title:User%20Canceled&title:TouchID%20not%20enrolled&title:Passcode%20not%20set&title:TouchID%20not%20available&title:Authenticated%20success%20!"
+        }]
+    };
+
             var cmdName = lpTag.agentSDK.cmdNames.writeSC;
-            var data = {json:json};
+            var data = {json:jData};
             lpTag.agentSDK.command(cmdName, data, function (err) {
                outputLog.value = err ? err : 'done';
             });
