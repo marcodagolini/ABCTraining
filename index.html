@@ -266,11 +266,12 @@
             });
          }
 	  function restaurantappleSC() {
+
 		  
 
 		  
-	    var jData = {
-        "json": {
+
+        var listPickerSC = {
   "type": "vertical",
   "tag": "list",
   "elements": [
@@ -438,9 +439,8 @@
       ]
     }
   ]
-}
-,
-        "metadata": [
+};
+        var listPickerSCMetadata = [
     {
         "type": "BusinessChatMessage",
         "multipleSelection": true,
@@ -459,16 +459,17 @@
             "tertiarySubtitle": "tertiarySubtitle"
         }
     }
-]
-
-    };
+];
     
     
 
 
             var cmdName = lpTag.agentSDK.cmdNames.writeSC;
-            var data = {json:jData};
-            lpTag.agentSDK.command(cmdName, data, function (err) {
+            var payload = {
+json: listPickerSC,
+metadata: listPickerSCMetadata
+};
+            lpTag.agentSDK.command(cmdName, payload, function (err) {
                outputLog.value = err ? err : 'done';
             });
          }
