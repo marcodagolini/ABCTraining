@@ -1,3 +1,8 @@
+
+
+
+
+
 <html>
    <head>
      <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
@@ -14,6 +19,26 @@
            padding:0px;
            font-family:helvetica;
        }
+	button {
+    background-color: #f68a1f;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 4px;
+    cursor: pointer;
+	  border-radius: 4px;
+	  -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+	  font-family: "Myriad pro","Trebuchet MS","Lucida Grande","Lucida Sans Unicode","Lucida Sans",sans-serif;
+}
+button:hover {
+    background-color: #da7009;
+    color: white;	
+}
         
        h1 {
            text-align:relative;
@@ -155,6 +180,7 @@
      
      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
      <script src="https://lpcdn.lpsnmedia.net/webagent/client-SDK.min.js"></script>
+     <script src="https://lpcdn.lpsnmedia.net/webagent/client-SDK.min.js"></script>
  	  
      
  	  
@@ -182,6 +208,42 @@
               evt.target.className += " active";
           }
     </script>
+	   
+	   
+	   
+           <script>
+            
+            $(document).ready(function() {
+              
+                var SDK=lpTag.agentSDK;
+                SDK.init();
+              
+                var onSuccess = function(data) {
+                    // Do something with the returning data
+			if(data.includes("apple")){
+				$('#genericSC').css('display', 'none');
+		  		$('#appleSC').css('display', 'inline');
+			}
+			else{
+				$('#genericSC').css('display', 'inline');
+		  		$('#appleSC').css('display', 'none');
+			}
+		  
+
+                };
+                
+                var onError = function(data) {
+                  console.log("Error");
+                    // Do something with the returning data
+                };
+                
+             
+                SDK.get('authenticatedData.customerDetails.customerId', onSuccess, onError);               
+              
+            });
+  
+        
+        </script>
      
      <script>
        // This example adds a search box to a map, using the Google Place Autocomplete
@@ -410,6 +472,7 @@
      </head>
    
      <body>
+	 <div class="genericSC">
          <div class="tab">
                <button id="buttonMap" class="tablinks tabMap" onclick="openContent(event, 'Map')">Map</button>
                <button id="buttonCard" class="tablinks tabCard" onclick="openContent(event, 'Card')">Card</button>
@@ -466,6 +529,10 @@
                </form>
  	            <div id="sendVideo" class="generate">Generate Code</div>
          </div>
+	 </div>
+	 <div class="appleSC">
+		 
+	 </div>
         
     </body>
 </html> 
