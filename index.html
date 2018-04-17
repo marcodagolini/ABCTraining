@@ -272,22 +272,175 @@
 		  
 	    var jData = {
         "json": {
-            "type": "vertical",
-            "elements": [{
-                "type": "vertical",
-                "elements": [{
-                    "type": "image",
-                    "url": "https://lpwidgets.devscribble.com/images/WelcomeCelebratory.jpg"
-                }]
-            }, {
-                "type": "text",
-                "text": "Welcome Bubble",
-                "style": {
+  "type": "vertical",
+  "tag": "list",
+  "elements": [
+    {
+      "type": "vertical",
+      "elements": [
+        {
+          "type": "text",
+          "text": "iPhones",
+          "tooltip": "text tooltip",
+          "style": {
+            "bold": true,
+            "size": "large"
+          }
+        },
+        {
+          "type": "horizontal",
+          "elements": [
+            {
+              "type": "vertical",
+              "elements": [
+                {
+                  "type": "text",
+                  "tag": "title",
+                  "text": "iPhone X",
+                  "tooltip": "Title",
+                  "style": {
                     "bold": true,
                     "size": "large"
+                  }
+                },
+                {
+                  "type": "text",
+                  "tag": "subtitle",
+                  "text": "Black",
+                  "tooltip": "Black"
+                },
+                {
+                  "type": "button",
+                  "tooltip": "Add to cart",
+                  "title": "Add to cart",
+                  "click": {
+                    "actions": [
+                      {
+                        "type": "publishText",
+                        "text": "iPhone X Added"
+                      }
+                    ],
+                    "metadata": [
+                      {
+                        "type": "ExternalId",
+                        "id": "iPhone X"
+                      }
+                    ]
+                  }
                 }
-            }]
+              ]
+            }
+          ]
         },
+        {
+          "type": "horizontal",
+          "elements": [
+            {
+              "type": "vertical",
+              "elements": [
+                {
+                  "type": "text",
+                  "tag": "title",
+                  "text": "iPhone 8",
+                  "tooltip": "iPhone 8",
+                  "style": {
+                    "bold": true,
+                    "size": "large"
+                  }
+                },
+                {
+                  "type": "text",
+                  "tag": "subtitle",
+                  "text": "Rose Gold",
+                  "tooltip": "Rose Gold"
+                },
+                {
+                  "type": "button",
+                  "tooltip": "Add to cart",
+                  "title": "Add to cart",
+                  "click": {
+                    "actions": [
+                      {
+                        "type": "publishText",
+                        "text": "iPhone 8 Added"
+                      }
+                    ],
+                    "metadata": [
+                      {
+                        "type": "ExternalId",
+                        "id": "iPhone 8"
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "vertical",
+      "elements": [
+        {
+          "type": "text",
+          "text": "iPads",
+          "tooltip": "iPads",
+          "style": {
+            "bold": true,
+            "size": "large"
+          }
+        },
+        {
+          "type": "horizontal",
+          "elements": [
+            {
+              "type": "vertical",
+              "elements": [
+                {
+                  "type": "text",
+                  "tag": "title",
+                  "text": "iPad Pro",
+                  "tooltip": "iPad Pro",
+                  "style": {
+                    "bold": true,
+                    "size": "large"
+                  }
+                },
+                {
+                  "type": "text",
+                  "tag": "subtitle",
+                  "text": "Space Grey",
+                  "tooltip": "Space Grey"
+                },
+                {
+                  "type": "button",
+                  "tooltip": "Add to cart",
+                  "title": "Add to cart",
+                  "click": {
+                    "actions": [
+                      {
+                        "type": "publishText",
+                        "text": "iPad Pro Added"
+                      }
+                    ],
+                    "metadata": [
+                      {
+                        "type": "ExternalId",
+                        "id": "iPad Pro"
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+,
         "metadata": [
     {
         "type": "BusinessChatMessage",
