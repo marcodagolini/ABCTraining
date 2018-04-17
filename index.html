@@ -264,6 +264,35 @@
             });
          }
 	  function restaurantappleSC() {
+		  
+		  var jData = {
+ 			               "type": "vertical",
+ 			               "elements": [{
+ 				               "type": "image",
+ 				               "url": "https://www.youtube.com",
+ 				               "tooltip": "image tooltip",
+ 				               "click": {
+ 					               "actions": [{
+ 						               "type": "link",
+ 						               "uri": "https://www.youtube.com"
+ 					               }]
+ 				               }
+ 			               },
+ 			               {
+ 				               "type": "text",
+ 				               "text": "ciaociao",
+					       "tooltip": "video",
+ 				               "style": {
+ 					               "bold": true,
+ 					               "size": "large",
+						       "color": "#000000"
+ 				               }
+ 			               }
+ 		               ]};
+		  
+		  
+		  /***************
+		  
 	    var jData = {
         "json": {
             "type": "vertical",
@@ -302,6 +331,9 @@
             "URL": "https://www.youtube.com"
         }]
     };
+    
+    
+    **************/
 
             var cmdName = lpTag.agentSDK.cmdNames.writeSC;
             var data = {json:jData};
