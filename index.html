@@ -283,7 +283,7 @@
  			               "type": "vertical",
  			               "elements": [{
  				               "type": "image",
- 				               "url": "https://i.imgur.com/BahW8MP.png",
+ 				               "url": "https://i.imgur.com/6Ne2kqO.jpg",
  				               "tooltip": "image tooltip"
  			               },
  			               {
@@ -298,11 +298,11 @@
  			               },
  			               {
  				               "type": "button",
- 				               "title": "Cracco Website",
+ 				               "title": "VIU Hotel",
  				               "click": {
  					               "actions": [{
  						               "type": "link",
- 						               "uri": "https://www.ristorantecracco.it"
+ 						               "uri": "http://www.hotelviumilan.com/"
  					               }]
  				               }
  			               }
@@ -318,10 +318,10 @@
   "sessionIdentifier": "",
   "useLiveLayout": true,
   "receivedMessage": {
-"imageURL":"https://i.imgur.com/BahW8MP.png",
-      "title": "Cracco Restaurant",
+"imageURL":"https://i.imgur.com/6Ne2kqO.jpg",
+      "title": "VIU Hotel",
       "style": "icon",
-      "subtitle": "Try and see!",
+      "subtitle": "hotelVIUmilan",
       "secondarySubtitle": "",
       "tertiarySubtitle": "",
       "imageTitle": "",
@@ -352,56 +352,167 @@ metadata: listPickerSCMetadata
 		  
 
         var listPickerSC = {
-		 "type": "vertical",
-            	 "elements": [{
- 			               "type": "vertical",
- 			               "elements": [{
- 				               "type": "image",
- 				               "url": "https://i.imgur.com/ieehkX3.png",
- 				               "tooltip": "image tooltip"
- 			               },
- 			               {
- 				               "type": "text",
- 				               "text": "Your account banking",
- 				               "tooltip": "brand new iphone 8",
- 				               "style": {
- 					               "bold": true,
- 					               "size": "large",
-						       "color": "#000000"
- 				               }
- 			               },
- 			               {
- 				               "type": "button",
- 				               "title": "Your account balance",
- 				               "click": {
- 					               "actions": [{
- 						               "type": "link",
- 						               "uri": "https://www.ristorantecracco.it"
- 					               }]
- 				               }
- 			               }
-						    
- 		               ]}]};
+  "type": "vertical",
+  "tag": "datePicker",
+  "elements": [
+    {
+      "type": "text",
+      "text": "Select Date",
+      "tag": "Title",
+      "style": {
+        "bold": true,
+        "size": "large"
+      }
+    },
+    {
+      "type": "text",
+      "text": "Thursday, June 7"
+    },
+    {
+      "type": "horizontal",
+      "elements": [
+        {
+          "type": "button",
+          "title": "11:30",
+          "click": {
+            "metadata": [
+              {
+                "type": "ExternalId",
+                "id": "SlotIdentidier"
+              },
+              {
+                "type": "BusinessEvent",
+                "timing": {
+                  "startTime": "2018-06-07T11:30:00Z",
+                  "duration": 3600
+                }
+              }
+            ],
+            "actions": [
+              {
+                "type": "publishText",
+                "text": "Technician visit: 7/6/2018 11:30 IST"
+              }
+            ]
+          }
+        },
+        {
+          "type": "button",
+          "title": "12:00",
+          "click": {
+            "metadata": [
+              {
+                "type": "ExternalId",
+                "id": "SlotIdentidier"
+              },
+              {
+                "type": "BusinessEvent",
+                "timing": {
+                  "startTime": "2018-06-07T12:00:00Z",
+                  "duration": 3600
+                }
+              }
+            ],
+            "actions": [
+              {
+                "type": "publishText",
+                "text": "Technician visit: 7/6/2018 12:00 IST"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "text": "Friday, June 8"
+    },
+    {
+      "type": "horizontal",
+      "elements": [
+        {
+          "type": "button",
+          "title": "12:30",
+          "click": {
+            "metadata": [
+              {
+                "type": "ExternalId",
+                "id": "SlotIdentidier"
+              },
+              {
+                "type": "BusinessEvent",
+                "timing": {
+                  "startTime": "2018-06-08T12:30:00Z",
+                  "duration": 3600
+                }
+              }
+            ],
+            "actions": [
+              {
+                "type": "publishText",
+                "text": "Technician visit: 8/6/2018 12:30 IST"
+              }
+            ]
+          }
+        },
+        {
+          "type": "button",
+          "title": "14:00",
+          "click": {
+            "metadata": [
+              {
+                "type": "ExternalId",
+                "id": "SlotIdentidier"
+              },
+              {
+                "type": "BusinessEvent",
+                "timing": {
+                  "startTime": "2018-06-08T14:00:00Z",
+                  "duration": 3600
+                }
+              }
+            ],
+            "actions": [
+              {
+                "type": "publishText",
+                "text": "Technician visit: 8/6/2018 14:00 IST"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+};
 		  
 		  
-        var listPickerSCMetadata = [{"type":"BusinessChatCustomMessage",
-				     "appId":12337,
-				     "appName":"iMessageBuddy",
-				     "bid":"mdagolini.com.MyBuddy.iMessageBuddy:SBMXZCAH8E:mdagolini.com.MyBuddy",
-				     "sessionIdentifier":"",
-				     "useLiveLayout":false,
-				     "receivedMessage":{
-					     "imageURL":"https://i.imgur.com/ieehkX3.png",
-					     "title":"Please Authenticate",
-					     "style":"icon",
-					     "subtitle":"",
-					     "secondarySubtitle":"",
-					     "tertiarySubtitle":"",
-					     "imageTitle":"",
-					     "imageSubtitle":""
-				     },
-				     "URL":"https://imessagetest.com/authentication?rewriteextjsonparser=true&SessionID=7038715a-be6a-4060-be86-d25f1e1e468f&OpaqueUserId=0237a514fad100bc88051a6148906a28e42a4626d2dac66186e4ea66ffccf67d"}];
-    
+        var listPickerSCMetadata = [{
+    "type": "BusinessEvent",
+    "timing": {
+        "presentedTimezoneOffset": 120
+    },
+    "location": {
+        "title": "LivePerson ATC Mannheim",
+        "la": 49.4872955,
+        "lo": 8.4682869,
+        "radius": 10
+    },
+    "title": "Technician Visit"
+}, {
+    "type": "BusinessChatMessage",
+    "receivedMessage": {
+        "title": "Select time",
+        "imageURL": "https://cdn.dribbble.com/users/85668/screenshots/1352116/dribblble_mock_1x.jpg",
+        "style": "small",
+        "subtitle": "Select the time that fits your schedule"
+    },
+    "replyMessage": {
+        "title": "Selected time",
+        "style": "small",
+        "imageURL": "https://cdn.dribbble.com/users/85668/screenshots/1352116/dribblble_mock_1x.jpg",
+        "subtitle": "Time selected!"
+    }
+}];
     
 
 
@@ -695,9 +806,9 @@ metadata: listPickerSCMetadata
          </div>
 	 </div>
 	 <div id="appleSC">
-		 <button class="applebutton" id="submitRestaurant" >Restaurant</button>
-		 </br>
-		 <button class="applebutton" id="submitAccountNumber" >Bank Account</button>
+		 <button class="applebutton" id="submitRestaurant" >VIU Card</button>
+		 </br></br>
+		 <button class="applebutton" id="submitAccountNumber" >Invia prime disponibilita'</button>
 	 </div>
         
     </body>
