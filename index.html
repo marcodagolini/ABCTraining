@@ -224,10 +224,17 @@
                     // Do something with the returning data
 			if(data.includes("apple")){
 				$('#genericSC').css('display', 'none');
+				$('#facebookSC').css('display', 'none');
 		  		$('#appleSC').css('display', 'inline');
+			}
+			else if(data.includes("book")){
+				$('#genericSC').css('display', 'none');
+				$('#facebookSC').css('display', 'inline');
+		  		$('#appleSC').css('display', 'none');
 			}
 			else{
 				$('#genericSC').css('display', 'inline');
+				$('#facebookSC').css('display', 'none');
 		  		$('#appleSC').css('display', 'none');
 			}
 		  
@@ -235,7 +242,8 @@
                 };
                 
                 var onError = function(data) {
-		   $('#genericSC').css('display', 'inline');
+		    $('#genericSC').css('display', 'inline');
+		    $('#facebookSC').css('display', 'none');
 		    $('#appleSC').css('display', 'none');
                   console.log("Error");
                     // Do something with the returning data
@@ -656,6 +664,22 @@ metadata: listPickerSCMetadata
  		           accountnumberappleSC();    
                  }
             });
+	     
+	     
+	     
+	     $(document).on('click', function(evt) {
+               if($(evt.target).is('#example1FB')) {
+		       example1FB();
+                 }
+            });
+	     
+	     
+	     
+	     $(document).on('click', function(evt) {
+               if($(evt.target).is('#example2FB')) {
+		       example2FB();
+                 }
+            });
  	    
  	
  	    
@@ -808,6 +832,11 @@ metadata: listPickerSCMetadata
 		 <button class="applebutton" id="submitRestaurant" >VIU Card</button>
 		 </br></br>
 		 <button class="applebutton" id="submitAccountNumber" >Invia prime disponibilita'</button>
+	 </div>
+	 <div id="facebookSC">
+		 <button class="applebutton" id="example1FB" >example1FB</button>
+		 </br></br>
+		 <button class="applebutton" id="example2FB" >example2FB</button>
 	 </div>
         
     </body>
