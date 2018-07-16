@@ -1013,6 +1013,67 @@ metadata: listPickerSCMetadata
 	     
 	     
 	     
+	     	        $(document).on('click', function(evt) {
+               if($(evt.target).is('#sendQuickReplies')) {
+
+ 		               var DataQuickReplies = {
+  "type": "quickReplies",
+  "itemsPerRow": 8,
+  "replies": [
+    {
+      "type": "button",
+      "tooltip": "yes i do",
+      "title": "yes",
+      "click": {
+        "actions": [
+          {
+            "type": "publishText",
+            "text": "yep"
+          }
+        ],
+        "metadata": [
+          {
+            "type": "ExternalId",
+            "id": "Yes-1234"
+          }
+        ]
+      },
+      "style": {
+        "color": "#ffffff",
+        "border-color": "#444444",
+        "background-color": "#333333",
+        "border-radius": 25,
+        "bold": true
+      }
+    },
+    {
+      "type": "button",
+      "tooltip": "No!",
+      "title": "No!",
+      "click": {
+        "actions": [
+          {
+            "type": "publishText",
+            "text": "No!"
+          }
+        ],
+        "metadata": [
+          {
+            "type": "ExternalId",
+            "id": "No-4321"
+          }
+        ]
+      }
+    }
+  ]
+};
+			       
+                 sendSC(DataQuickReplies);
+                 }
+            });
+	     
+	     
+	     
 	     $(document).on('click', function(evt) {
                if($(evt.target).is('#submitRestaurant')) {
 		       restaurantappleSC();
@@ -1145,6 +1206,7 @@ metadata: listPickerSCMetadata
                <button id="buttonMap" class="tablinks tabMap" onclick="openContent(event, 'Map')">Map</button>
                <button id="buttonCard" class="tablinks tabCard" onclick="openContent(event, 'Card')">Card</button>
                <button id="buttonVideo" class="tablinks tabVideo" onclick="openContent(event, 'Video')">Video</button>
+	       <button id="buttonQuickReplies" class="tablinks tabVideo" onclick="openContent(event, 'QuickReplies')">QuickReplies</button>
          </div>
  
          <div id="Map" class="tabcontent">
@@ -1197,6 +1259,12 @@ metadata: listPickerSCMetadata
                </form>
  	            <div id="sendVideo" class="generate">Generate Code</div>
          </div>
+		 
+	<div id="QuickReplies" class="tabcontent">
+ 	            <div id="sendQuickReplies" class="generate">Generate Code</div>
+         </div>
+		 
+		 
 	 </div>
 	 <div id="appleSC">
 		 <button class="applebutton" id="submitRestaurant" >VIU Card</button>
