@@ -1013,9 +1013,17 @@ metadata: listPickerSCMetadata
 	     	        $(document).on('click', function(evt) {
                if($(evt.target).is('#sendQuickReplies')) {
 
- 		                var cmdName = lpTag.agentSDK.cmdNames.write; // = "Write ChatLine"
+ 		                var cmdName = lpTag.agentSDK.cmdNames.writeSC; // = "Write SC"
     var data = {
-      text: "Some text",
+      json: {
+        "type": "text",
+        "text": "product name",
+        "tooltip": "text tooltip",
+        "style": {
+          "bold": true,
+          "size": "large"
+        }
+      },
       quickReplies: {
         "type": "quickReplies",
         "itemsPerRow": 8,
@@ -1059,7 +1067,11 @@ metadata: listPickerSCMetadata
             }
           }
         ]
-      }
+      },
+      metadata: [	//metadata is optional
+        {"type": "ExternalId", "id": "running364"},
+        {"type": "ExternalId", "id": "soccer486"}
+      ]
     };
 
     lpTag.agentSDK.command(cmdName, data, function (err) {
