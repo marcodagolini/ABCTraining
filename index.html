@@ -1014,7 +1014,8 @@ metadata: listPickerSCMetadata
 	     	        $(document).on('click', function(evt) {
                if($(evt.target).is('#sendQuickReplies')) {
 
- 		               var DataQuickReplies = {
+ 		                var cmdName = lpTag.agentSDK.cmdNames.write; // = "Write ChatLine"
+    var data = {
       text: "Some text",
       quickReplies: {
         "type": "quickReplies",
@@ -1061,12 +1062,10 @@ metadata: listPickerSCMetadata
         ]
       }
     };
-			       
-                var cmdName = lpTag.agentSDK.cmdNames.writeSC;
 
-            	lpTag.agentSDK.command(cmdName, DataQuickReplies, function (err) {
-               		outputLog.value = err ? err : 'done';
-            	});
+    lpTag.agentSDK.command(cmdName, data, function (err) {
+               outputLog.value = err ? err : 'done';
+            });
 
 		       
 		       
