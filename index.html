@@ -1172,7 +1172,18 @@ metadata: listPickerSCMetadata
   ]
 };
 			       
-                 sendSC(DataQuickReplies);
+                var cmdName = lpTag.agentSDK.cmdNames.writeSC;
+            	var payload = {
+			quickReplies: DataQuickReplies
+		};
+            	lpTag.agentSDK.command(cmdName, payload, function (err) {
+               		outputLog.value = err ? err : 'done';
+            	});
+
+		       
+		       
+		       
+		       
                  }
             });
 	     
