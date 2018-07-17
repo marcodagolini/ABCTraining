@@ -1175,6 +1175,7 @@ metadata: listPickerSCMetadata
 			       
                 var cmdName = lpTag.agentSDK.cmdNames.writeSC;
             	var payload = {
+			text: "text to write",
 			quickReplies: DataQuickReplies
 		};
             	lpTag.agentSDK.command(cmdName, payload, function (err) {
