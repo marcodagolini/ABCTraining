@@ -186,33 +186,33 @@
      
  	  
      <script>
+	     
+	     $("document").ready(function() {
+		     setTimeout(function() {
+			     var mybutton = document.getElementById("buttonMap");
+			     mybutton.className += " active";
+			     $(".tabMap").trigger('click');
+		     },10);
+	     });
+	     function openContent(evt, contentType) {
+		     var i, tabcontent, tablinks;
+		     tabcontent = document.getElementsByClassName("tabcontent");
+		     for (i = 0; i < tabcontent.length; i++) {
+			   tabcontent[i].style.display = "none";
+		     }
+		     tablinks = document.getElementsByClassName("tablinks");
+		     for (i = 0; i < tablinks.length; i++) {
+			     tablinks[i].className = tablinks[i].className.replace(" active", "");
+		     }
+		     document.getElementById(contentType).style.display = "block";
+		     evt.target.className += " active";
+	     }
  	   
- 
-       	$("document").ready(function() {
-           setTimeout(function() {
-              var mybutton = document.getElementById("buttonMap");
-              mybutton.className += " active";
-              $(".tabMap").trigger('click');
-           },10);
-         });
-         function openContent(evt, contentType) {
-              var i, tabcontent, tablinks;
-              tabcontent = document.getElementsByClassName("tabcontent");
-              for (i = 0; i < tabcontent.length; i++) {
-                  tabcontent[i].style.display = "none";
-              }
-              tablinks = document.getElementsByClassName("tablinks");
-              for (i = 0; i < tablinks.length; i++) {
-                   tablinks[i].className = tablinks[i].className.replace(" active", "");
-              }
-              document.getElementById(contentType).style.display = "block";
-              evt.target.className += " active";
-          }
+
     </script>
 	   
-	   
-	   
-           <script>
+    <script>
+	    
             
             $(document).ready(function() {
               
@@ -256,99 +256,99 @@
         
         </script>
      
-     <script>
-       // This example adds a search box to a map, using the Google Place Autocomplete
-       // feature. People can enter geographical searches. The search box will return a
-       // pick list containing a mix of places and predicted search terms.
- 
-       // This example requires the Places library. Include the libraries=places
-       // parameter when you first load the API. For example:
-       // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
- 
-         var InterceptedLat = "";
-         var InterceptedLong = "";
- 
-         lpTag.agentSDK.init({});
-       
-         function sendSC(json) {
-            var cmdName = lpTag.agentSDK.cmdNames.writeSC;
-            var data = {json:json};
-            lpTag.agentSDK.command(cmdName, data, function (err) {
-               outputLog.value = err ? err : 'done';
-            });
-         }
-	     function example1FB() {
-
-		  
-
-		  
-
-        var listPickerSC = {
-  "type": "vertical",
-  "tag": "generic",
-  "elements": [
-    {
-      "type": "vertical",
-      "elements": [
-        {
-          "type": "image",
-          "url": "https://i.imgur.com/myfcowk.png",
-          "tooltip": "Flowers"
-        },
-        {
-          "type": "text",
-          "tag": "title",
-          "text": "Birthday Trip",
-          "tooltip": "Title"
-        },
-        {
-          "type": "text",
-          "tag": "subtitle",
-          "text": "Your Trip",
-          "tooltip": "subtitle"
-        },
-        {
-          "type": "button",
-          "tooltip": "publish text example",
-          "title": "publish text example",
-          "click": {
-            "actions": [
-              {
-                "type": "publishText",
-                "text": "published text button tap"
-              }
-            ]
-          }
-        },
-        {
-          "type": "button",
-          "tooltip": "URL button example",
-          "title": "URL button example",
-          "click": {
-            "actions": [
-              {
-                "type": "link",
-                "name": "URL button tap",
-                "uri": "https://marcodagolini.github.io/webmessaging1/"
-              }
-            ]
-          }
-        },
-        {
-          "type": "button",
-          "title": "Navigate",
-          "click": {
-               "actions": [
-              {
-                "type": "navigate",
-                "lo": 40.7562,
-                "la": -73.99861
-              }
-            ]
-          }
-        }
-      ]
-    }]};
+        <script>
+		var InterceptedLat = "";
+		var InterceptedLong = "";
+		lpTag.agentSDK.init({});
+		function sendSC(json) {
+			var cmdName = lpTag.agentSDK.cmdNames.writeSC;
+			var data = {json:json};
+			lpTag.agentSDK.command(cmdName, data, function (err) {
+				outputLog.value = err ? err : 'done';
+			});
+		}
+		
+		function example1FB() {
+			var listPickerSC = {
+				"type": "vertical",
+				"tag": "generic",
+				"elements": [
+					{
+						"type": "vertical",
+						"elements": [
+							{
+								"type": "image",
+								"url": "https://i.imgur.com/myfcowk.png",
+								"tooltip": "Flowers"
+							},
+							{
+								"type": "text",
+								"tag": "title",
+								"text": "Birthday Trip",
+								"tooltip": "Title"
+							},
+							{
+								"type": "text",
+								"tag": "subtitle",
+								"text": "Your Trip",
+								"tooltip": "subtitle"
+							},
+							{
+								"type": "button",
+								"tooltip": "publish text example",
+								"title": "publish text example",
+								"click": {
+									"actions": [
+										{
+											"type": "publishText",
+											"text": "published text button tap"
+										}
+									]
+								}
+							},
+							{
+								"type": "button",
+								"tooltip": "URL button example",
+								"title": "URL button example",
+								"click": {
+									"actions": [
+										{
+											"type": "link",
+											"name": "URL button tap",
+											"uri": "https://marcodagolini.github.io/webmessaging1/"
+										}
+									]
+								}
+							},
+							{
+								"type": "button",
+								"title": "Navigate",
+								"click": {
+									"actions": [
+										{
+											"type": "navigate",
+											"lo": 40.7562,
+											"la": -73.99861
+										}
+									]
+								}
+							}
+						]
+					}
+				]
+			};
+			
+			var cmdName = lpTag.agentSDK.cmdNames.writeSC;
+			var payload = {
+				json: listPickerSC
+			};
+			lpTag.agentSDK.command(cmdName, payload, function (err) {
+				outputLog.value = err ? err : 'done';
+			});
+		}
+				
+			
+											
 		  
 		/*****************************  
 		
@@ -375,14 +375,7 @@
     **********************/
 
 
-            var cmdName = lpTag.agentSDK.cmdNames.writeSC;
-            var payload = {
-json: listPickerSC
-};
-            lpTag.agentSDK.command(cmdName, payload, function (err) {
-               outputLog.value = err ? err : 'done';
-            });
-         }
+         
 	     
 	     
 	     function restaurantappleSC() {
